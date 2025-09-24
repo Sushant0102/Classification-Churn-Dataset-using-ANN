@@ -51,7 +51,7 @@ input_data = pd.DataFrame({
 })
 
 # One-hot encode 'Geography'
-geo_encoded= label_endode_geo.transform([[input_data['Geography']]]).toarray()
+geo_encoded= label_endode_geo.transform([[geography]]).toarray()
 geo_encoded_df=pd.DataFrame(geo_encoded ,columns=label_endode_geo.get_feature_names_out(['Geography']))
 
 # Combine one-hot encoded columns with input data
@@ -72,3 +72,4 @@ if prediction_proba > 0.5:
     st.write('The customer is likely to churn.')
 else:
     st.write('The customer is not likely to churn.')
+
